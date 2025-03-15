@@ -40,6 +40,7 @@ const filtered = computed(() => works.value?.filter(
     </div>
 
     <div class="flex flex-wrap">
+<!--      TODO-->
 <!--      <TransitionGroup>-->
         <div v-for="work in filtered" :key="work.id" v-scroll class="m-3 min-w-fit grow transition-all duration-1000 ease-in-out anim-hidden">
           <WorkDisplay :name="work.title" :tags="work.tags" :desc="work.description"/>
