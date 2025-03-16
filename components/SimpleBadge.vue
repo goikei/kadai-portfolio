@@ -18,7 +18,3 @@ const colorVariants: Record<ColorSchemes, {highlight: string, normal: string}> =
     <span>{{ text }}</span>
   </div>
 </template>
-
-<style scoped>
-
-</style>

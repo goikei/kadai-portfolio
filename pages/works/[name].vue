@@ -12,9 +12,7 @@ const work = data as unknown as Record<string, unknown>
 </script>
 
 <template>
-  <ContentRenderer :value="work" />
+  <CardSection>
+    <ContentRenderer :value="work" class="[&_h1]:text-4xl [&_h1]:font-bold"/>
+  </CardSection>
 </template>
-
-<style scoped>
-
-</style>

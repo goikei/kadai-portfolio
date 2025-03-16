@@ -5,8 +5,8 @@ const TagInfoMap: Record<string, { icon: string }> = {
     "公開中": {
         icon: "material-symbols:public",
     },
-    "サ終": {
-        icon: "material-symbols:mood-bad",
+    "公開終了": {
+        icon: "material-symbols:delete",
     },
     "ゲーム": {
         icon: "material-symbols:videogame-asset",
@@ -24,7 +24,7 @@ const TagInfoMap: Record<string, { icon: string }> = {
 const CategoryInfoMap: Record<string, { icon: string, tags: string[] }> = {
     "状態": {
         icon: "material-symbols:browse-activity",
-        tags: ["制作中", "公開中", "サ終"]
+        tags: ["制作中", "公開中", "公開終了"]
     },
     "カテゴリ": {
         icon: "material-symbols:category-search",

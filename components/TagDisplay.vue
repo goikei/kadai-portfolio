@@ -6,9 +6,5 @@ const tagInfo = TagInfoMap[props.tag]
 </script>
 
 <template>
-  <SimpleBadge :icon="tagInfo.icon" :text="tag" :highlighted />
+  <SimpleBadge :icon="tagInfo?.icon" :text="tag" :highlighted />
 </template>
-
-<style scoped>
-
-</style>

@@ -26,32 +26,33 @@ const filtered = computed(() => works.value?.filter(
 
 <template>
   <div>
-    <div class="my-1">
-      <UInput
-          v-model="searchText"
-          icon="material-symbols:search"
-          size="sm"
-          leading
-          placeholder="Search..."
-      />
-    </div>
-    タグ：<div class="inline-flex *:mx-2">
-      <TagSelector v-for="category in Object.keys(CategoryInfoMap)" :key="category" :category :selected @toggle="onToggle" />
-    </div>
+    <CardSection>
+      <div class="inline-flex my-1">
+        <UInput
+            v-model="searchText"
+            icon="material-symbols:search"
+            size="sm"
+            leading
+            placeholder="検索..."
+        />
+      </div>
+      タグ：
+      <div class="inline-flex *:mx-2">
+        <TagSelector v-for="category in Object.keys(CategoryInfoMap)" :key="category" :category :selected @toggle="onToggle" />
+      </div>
+    </CardSection>
 
     <div class="flex flex-wrap">
-<!--      TODO-->
-<!--      <TransitionGroup>-->
-        <div v-for="work in filtered" :key="work.id" v-scroll class="m-3 min-w-fit grow transition-all duration-1000 ease-in-out anim-hidden">
-          <WorkDisplay :name="work.title" :tags="work.tags" :desc="work.description"/>
-        </div>
-      <div v-if="!filtered || filtered?.length === 0" class="text-gray-400 text-center w-full">
-        <Icon name="material-symbols:mood-bad" class="text-8xl" /><br>
-        <p class="text-4xl font-semibold">Not found!</p>
-        <p>検索条件を変えてください。</p>
+      <div v-for="work in filtered" :key="work.id" v-scroll class="min-w-fit grow transition-all duration-1000 ease-in-out anim-hidden">
+        <WorkDisplay :name="work.title" :tags="work.tags" :desc="work.description" :image="work.image" />
       </div>
-<!--      </TransitionGroup>-->
     </div>
+
+    <CardSection v-if="!filtered || filtered?.length === 0" class="text-gray-600 text-center">
+      <Icon name="material-symbols:mood-bad" class="text-8xl" /><br>
+      <p class="text-4xl font-semibold">Not found!</p>
+      <p>検索条件を変えてください。</p>
+    </CardSection>
   </div>
 </template>
 
